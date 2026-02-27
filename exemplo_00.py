@@ -2,6 +2,7 @@ from loguru import logger
 from sys import stderr
 
 
+
 logger.add("meu_log.log", level="CRITICAL")
 
 def soma(x, y):
