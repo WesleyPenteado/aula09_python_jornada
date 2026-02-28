@@ -1,18 +1,16 @@
-from loguru import logger
-from sys import stderr
+from utils_log import log_decorator
+from timer_decorator import time_measure_decorator
+import time
+
+# pydantic
+# pandera
 
 
-
-logger.add("meu_log.log", level="CRITICAL")
-
+@time_measure_decorator
 def soma(x, y):
-    try:
-        soma = x + y
-        logger.info(f'voce digitou valores corretos, parabens {soma}')
-        return soma
-    except:
-        logger.critical("Voce precisa digitar valores corretos")
+    time.sleep(2)
+    return x + y
 
 print(soma(2,3))
 print(soma(2,7))
-print(soma(2,"3"))
+
